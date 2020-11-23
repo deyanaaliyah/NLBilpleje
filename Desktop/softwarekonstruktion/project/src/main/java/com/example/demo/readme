@@ -1,0 +1,5 @@
+project installation:
+
+spring initializer, with given plugins:
+* spring web
+* mysql h2
