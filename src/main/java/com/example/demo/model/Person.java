@@ -1,10 +1,8 @@
 package com.example.demo.model;
 
 import javax.annotation.processing.Generated;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Person {
@@ -12,23 +10,14 @@ public class Person {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    // These are the columns
     private String firstName;
     private String lastName;
     private String mail;
     private int phone;
     private String carType;
 
-    public Person(long id, String firstName, String lastName, String mail, int phone, String carType) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.mail = mail;
-        this.phone = phone;
-        this.carType = carType;
-    }
-
-    public Person(){}
-
+    // Getters and setters
     public long getId() {
         return id;
     }
@@ -77,15 +66,15 @@ public class Person {
         this.carType = carType;
     }
 
-    @Override
-    public String toString() {
-        return "Person{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", mail='" + mail + '\'' +
-                ", phone=" + phone +
-                ", carType='" + carType + '\'' +
-                '}';
+    public Set<Car> getCarSet() {
+        return carSet;
     }
+
+    public void setCarSet(Set<Car> carSet) {
+        this.carSet = carSet;
+    }
+
+    // This is the relation types
+    @OneToMany(mappedBy = "size")
+    private Set<Car> carSet;
 }
