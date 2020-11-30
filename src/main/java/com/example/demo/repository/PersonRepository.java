@@ -1,12 +1,13 @@
 package com.example.demo.repository;
 
-import com.example.demo.model.IPerson;
 import com.example.demo.model.Person;
+import org.springframework.data.repository.CrudRepository;
 
 import java.util.Optional;
 
 //Mo
-public class PersonRepository implements IPerson {
+public class PersonRepository implements CrudRepository<Person,Long> {
+
     @Override
     public <S extends Person> S save(S s) {
         return null;
