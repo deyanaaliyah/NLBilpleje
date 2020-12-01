@@ -1,10 +1,12 @@
 package com.example.demo.model;
 
 import javax.persistence.*;
+import java.util.List;
+import java.util.Set;
 
 // "@Entity" is a statement to create a table
 @Entity
-public class Car {
+public class Book {
 
     // Generates an id which is auto incremental
     @Id
@@ -14,6 +16,8 @@ public class Car {
     // These are the columns
     private String size;
     private String addition;
+    private String licensePlate;
+    private boolean isCleaned;
 
     // Getters and setters
     public long getId() {
@@ -40,7 +44,34 @@ public class Car {
         this.addition = addition;
     }
 
+    public String getLicensePlate() {
+        return licensePlate;
+    }
+
+    public void setLicensePlate(String licensePlate) {
+        this.licensePlate = licensePlate;
+    }
+
+    public boolean isCleaned() {
+        return isCleaned;
+    }
+
+    public void setCleaned(boolean cleaned) {
+        isCleaned = cleaned;
+    }
+
+    /*
+    public List<Person> getPersonSet() {
+        return personSet;
+    }
+
+    public void setPersonSet(List<Person> personSet) {
+        this.personSet = personSet;
+    }
+
     // This is the relation types
-    @ManyToOne
-    private Person person;
+    @OneToMany(mappedBy = "person_id")
+    public List<Person> personSet;
+
+     */
 }

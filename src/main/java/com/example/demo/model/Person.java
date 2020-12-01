@@ -1,6 +1,5 @@
 package com.example.demo.model;
 
-import javax.annotation.processing.Generated;
 import javax.persistence.*;
 import java.util.Set;
 
@@ -8,7 +7,7 @@ import java.util.Set;
 public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private long pid;
 
     // These are the columns
     private String firstName;
@@ -17,13 +16,14 @@ public class Person {
     private int phone;
     private String carType;
 
+
     // Getters and setters
-    public long getId() {
-        return id;
+    public long getPid() {
+        return pid;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setPid(long id) {
+        this.pid = id;
     }
 
     public String getFirstName() {
@@ -66,15 +66,19 @@ public class Person {
         this.carType = carType;
     }
 
-    public Set<Car> getCarSet() {
-        return carSet;
+    /*
+    public Set<Book> getBookSet() {
+        return bookSet;
     }
 
-    public void setCarSet(Set<Car> carSet) {
-        this.carSet = carSet;
+    public void setBookSet(Set<Book> bookSet) {
+        this.bookSet = bookSet;
     }
 
     // This is the relation types
-    @OneToMany(mappedBy = "size")
-    private Set<Car> carSet;
+    @OneToMany
+    @JoinColumn(name = "id")
+    private Set<Book> bookSet;
+
+     */
 }
