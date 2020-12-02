@@ -19,6 +19,6 @@ public class HomeController {
 
         // Prints out all persons on homepage via model.addAttribute method
         model.addAttribute("personToBeReturned", repository.findAll());
-        return "index";
+        return "/index.html";
     }
 }

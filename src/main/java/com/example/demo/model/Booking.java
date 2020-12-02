@@ -6,7 +6,7 @@ import java.util.Set;
 
 // "@Entity" is a statement to create a table
 @Entity
-public class Book {
+public class Booking {
 
     // Generates an id which is auto incremental
     @Id
