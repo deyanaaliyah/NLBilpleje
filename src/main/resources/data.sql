@@ -12,9 +12,9 @@ CREATE TABLE IF NOT EXISTS Booking(
     "size"          VARCHAR(200),
     "is_cleaned"    VARCHAR(200),
     "license_plate"  VARCHAR(7),
-    "person_id"     INT(100),
+    customer_id     INT(100),
     PRIMARY KEY ("id"),
-    FOREIGN KEY ("person_id")
+    FOREIGN KEY (customer_id)
         REFERENCES Customer(id));
 CREATE TABLE IF NOT EXISTS Admin(
     "id" INT(100) NOT NULL auto_increment,
