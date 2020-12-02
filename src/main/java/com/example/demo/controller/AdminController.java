@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.model.Admin;
 import com.example.demo.repository.AdminRepository;
 import com.example.demo.repository.BookingRepository;
+import com.example.demo.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +20,8 @@ public class AdminController {
     AdminRepository adminRepository;
     @Autowired
     BookingRepository bookingRepository;
+    @Autowired
+    CustomerRepository customerRepository;
 
     @GetMapping("/login")
     public String loginIndex(HttpSession session){

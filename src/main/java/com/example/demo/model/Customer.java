@@ -7,7 +7,7 @@ import java.util.Set;
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long pid;
+    private Long pid;
 
     // These are the columns
     private String firstName;

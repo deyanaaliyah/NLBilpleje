@@ -1,7 +1,5 @@
 package com.example.demo.controller;
 
-
-
 import com.example.demo.model.Booking;
 import com.example.demo.repository.BookingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,13 +22,12 @@ public class BookingController {
     private BookingRepository repository;
 
     // Reserves a customizable URL and body contains methods to be executed inside HTML
-    @GetMapping("/")
+    @GetMapping("/booking")
     public String index(Model model) {
 
         // Prints out all persons on homepage via model.addAttribute method
         model.addAttribute("bookToBeReturned", repository.findAll());
         return "index";
-
     }
 
     //Create a mapping for create or edit book
@@ -86,4 +83,3 @@ public class BookingController {
         return "successful";
     }
 }
-

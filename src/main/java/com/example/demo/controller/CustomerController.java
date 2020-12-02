@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import java.util.Optional;
 
 @RestController
@@ -17,20 +18,10 @@ public class CustomerController {
     @Autowired
     private CustomerRepository repository;
 
-    /*
-    // Reserves a customizable URL and body contains methods to be executed inside HTML
-    @GetMapping("/customer")
-    public String readPersons(Model model) {
-
-        // Prints out all persons on homepage via model.addAttribute method
-       model.addAttribute("personToBeReturned", repository.findAll());
-       return "/index.html";
-    }
-    */
-
     // Reserves a customizable URL and body contains methods to be executed inside HTML
     @GetMapping("/customer")
     public Iterable<Customer> readCustomer(){
+
         // Prints out all persons on homepage in Json format
         return repository.findAll();
     }
@@ -44,6 +35,4 @@ public class CustomerController {
             return ResponseEntity.status(404).body(response);
         }
     }
-
-
 }

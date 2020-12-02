@@ -9,7 +9,7 @@ public class Booking {
     // Generates an id which is auto incremental
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
     // These are the columns
     private String size;

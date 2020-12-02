@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS Customer (
+CREATE TABLE IF NOT EXISTS Customers (
                                       "id" INT(100) NOT NULL auto_increment,
                                       "car_type" VARCHAR(200),
                                       "first_name" VARCHAR(200),
@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS Customer (
                                       "phone" INT(8),
                                       PRIMARY KEY ("id"));
 
-CREATE TABLE IF NOT EXISTS Booking(
+CREATE TABLE IF NOT EXISTS Bookings(
                                    "id"            INT(100) NOT NULL auto_increment,
                                    "addition"      VARCHAR(200),
                                    "size"          VARCHAR(200),
@@ -17,10 +17,10 @@ CREATE TABLE IF NOT EXISTS Booking(
                                    `date` TIMESTAMP NOT NULL DEFAULT CURRENT_DATE(),
                                    PRIMARY KEY ("id"),
                                    FOREIGN KEY ("customer_id")
-                                       REFERENCES Customer(id));
+                                       REFERENCES Customers(id));
 
 -- data to be inserted into tables
-INSERT INTO Customer(car_type,first_name,last_name,mail,phone)
+INSERT INTO Customers(car_type,first_name,last_name,mail,phone)
 VALUES ('SUV',      'Per','Johansen',       'perj94@mail.com',      52484800),
        ('Micro',    'Kenneth','Sørensen',   'ksørensen@mail.com',   22842094),
        ('Sedan',    'Sarah','Hansen',       'sarhan@mail.com',      39462038),
@@ -30,7 +30,7 @@ VALUES ('SUV',      'Per','Johansen',       'perj94@mail.com',      52484800),
        ('Micro',    'Louis','Cruton',       'lc@mail.com',          24252501),
        ('Micro',    'Kristian','Deeznuts',  'krisnuts@mail.com',    24348210);
 
-INSERT INTO Booking(addition, size, status, license_plate, date)
+INSERT INTO Bookings(addition, size, status, license_plate, date)
 VALUES ('none',     'SUV',      'true',   'CK12345',    '2020-01-13 09:13:41'),
        ('polering', 'Micro',    'false',  'AE10808',    '2020-01-15 14:48:11'),
        ('none',     'Sedan',    'true',   'BM74823',    '2020-01-17 10:45:42'),

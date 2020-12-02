@@ -13,7 +13,7 @@ public class AdminRepository  {
 
     public AdminRepository(){
         this.admins = new ArrayList<>();
-        this.admins.add(new Admin("nl","1SecurePassword"));
+        this.admins.add(new Admin("nl","1234"));
     }
 
     public Admin read(String username, String password) {
