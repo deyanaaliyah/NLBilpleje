@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS Person (
+CREATE TABLE IF NOT EXISTS Customer (
     "id" INT(100) NOT NULL auto_increment,
     "car_type" VARCHAR(200),
     "first_name" VARCHAR(200),
@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS Booking(
     "person_id"     INT(100),
     PRIMARY KEY ("id"),
     FOREIGN KEY ("person_id")
-        REFERENCES Person(id));
+        REFERENCES Customer(id));
 CREATE TABLE IF NOT EXISTS Admin(
     "id" INT(100) NOT NULL auto_increment,
     "username" VARCHAR(200),
@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS Admin(
     PRIMARY KEY ("id"));
 
 -- data to be inserted into tables
-INSERT INTO Person(car_type,first_name,last_name,mail,phone)
+INSERT INTO Customer(car_type,first_name,last_name,mail,phone)
     VALUES ('SUV',      'Per','Johansen',       'perj94@mail.com',      52484800),
            ('Micro',    'Kenneth','Sørensen',   'ksørensen@mail.com',   22842094),
            ('Sedan',    'Sarah','Hansen',       'sarhan@mail.com',      39462038),
