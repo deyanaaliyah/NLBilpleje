@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+    <link rel="icon" type="image/png" href="https://i1.wp.com/www.pitlaneautomotive.ca/wp-content/uploads/2017/02/pitlane-automotive-car-favicon.png?ssl=1"/>
+
+</head>
+<body>
+<p>Logget in som : Admin</p>
+<h2>Velkommen</h2>
+
+<a href="/book">
+    <button>Ny booking</button>
+</a>
+<table>
+    <caption>Seneste bookings</caption>
+    <tr>
+        <td>Navn</td>
+        <td>Bil</td>
+        <td>Ekstra tilkøb</td>
+        <td>Status</td>
+        <td>Booket sidst</td>
+        <td>Ændr</td>
+    </tr>
+    <tr th:each="b : ${bookings}">
+        <td th:text="${b.licensePlate}"></td>
+        <td th:text="${b.size}"></td>
+        <td th:text="${b.addition}"></td>
+        <td th:text="${b.status}"></td>
+        <td th:text="${b.date}"></td>
+        <td>
+            <a th:href="@{/edit/{id}(id=${b.id})}" role="button">Redigér</a>
+            <a th:href="@{/delete/{id}(id=${b.id})}" role="button">Slet</a>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

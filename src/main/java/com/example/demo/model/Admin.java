@@ -9,16 +9,23 @@ import javax.persistence.Id;
 public class Admin {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    Long id;
 
     private String username;
     private String password;
 
-    public long getId() {
+    public Admin(String username,String password) {
+        this.username = username;
+        this.password = password;
+    }
+    public Admin() {
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

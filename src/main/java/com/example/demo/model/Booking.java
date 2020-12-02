@@ -1,8 +1,6 @@
 package com.example.demo.model;
 
 import javax.persistence.*;
-import java.util.List;
-import java.util.Set;
 
 // "@Entity" is a statement to create a table
 @Entity
@@ -11,20 +9,31 @@ public class Booking {
     // Generates an id which is auto incremental
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    Long id;
 
     // These are the columns
     private String size;
     private String addition;
     private String licensePlate;
-    private boolean isCleaned;
+    private String status;
+    private String date;
+
+    public Booking() {
+    }
+    public Booking(String size, String addition , String licensePlate , String status, String date) {
+        this.size = size;
+        this.addition = addition;
+        this.licensePlate = licensePlate;
+        this.status = status;
+        this.date = date;
+    }
 
     // Getters and setters
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -52,14 +61,21 @@ public class Booking {
         this.licensePlate = licensePlate;
     }
 
-    public boolean isCleaned() {
-        return isCleaned;
+    public String getStatus() {
+        return status;
     }
 
-    public void setCleaned(boolean cleaned) {
-        isCleaned = cleaned;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
     /*
     public List<Person> getPersonSet() {
         return personSet;
