@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS Person (
+CREATE TABLE IF NOT EXISTS Customer (
     "id" INT(100) NOT NULL auto_increment,
     "car_type" VARCHAR(200),
     "first_name" VARCHAR(200),
@@ -6,16 +6,16 @@ CREATE TABLE IF NOT EXISTS Person (
     "mail" VARCHAR(200),
     "phone" INT(8),
     PRIMARY KEY ("id"));
-CREATE TABLE IF NOT EXISTS Book(
+CREATE TABLE IF NOT EXISTS Booking(
     "id"            INT(100) NOT NULL auto_increment,
     "addition"      VARCHAR(200),
     "size"          VARCHAR(200),
     "is_cleaned"    VARCHAR(200),
     "license_plate"  VARCHAR(7),
-    "person_id"     INT(100),
+    customer_id     INT(100),
     PRIMARY KEY ("id"),
-    FOREIGN KEY ("person_id")
-        REFERENCES Person(id));
+    FOREIGN KEY (customer_id)
+        REFERENCES Customer(id));
 CREATE TABLE IF NOT EXISTS Admin(
     "id" INT(100) NOT NULL auto_increment,
     "username" VARCHAR(200),
@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS Admin(
     PRIMARY KEY ("id"));
 
 -- data to be inserted into tables
-INSERT INTO Person(car_type,first_name,last_name,mail,phone)
+INSERT INTO Customer(car_type,first_name,last_name,mail,phone)
     VALUES ('SUV',      'Per','Johansen',       'perj94@mail.com',      52484800),
            ('Micro',    'Kenneth','Sørensen',   'ksørensen@mail.com',   22842094),
            ('Sedan',    'Sarah','Hansen',       'sarhan@mail.com',      39462038),
@@ -33,7 +33,7 @@ INSERT INTO Person(car_type,first_name,last_name,mail,phone)
            ('Micro',    'Louis','Cruton',       'lc@mail.com',          24252501),
            ('Micro',    'Kristian','Deeznuts',  'krisnuts@mail.com',    24348210);
 
-INSERT INTO Book(addition, size, is_cleaned, license_plate)
+INSERT INTO Booking(addition, size, is_cleaned, license_plate)
     VALUES ('none',     'SUV',      'true',   'CK12345'),
            ('polering', 'Micro',    'false',  'AE10808'),
            ('none',     'Sedan',    'true',   'BM74823'),
