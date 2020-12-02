@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS Person (
     "mail" VARCHAR(200),
     "phone" INT(8),
     PRIMARY KEY ("id"));
-CREATE TABLE IF NOT EXISTS Book(
+CREATE TABLE IF NOT EXISTS Booking(
     "id"            INT(100) NOT NULL auto_increment,
     "addition"      VARCHAR(200),
     "size"          VARCHAR(200),
@@ -33,7 +33,7 @@ INSERT INTO Person(car_type,first_name,last_name,mail,phone)
            ('Micro',    'Louis','Cruton',       'lc@mail.com',          24252501),
            ('Micro',    'Kristian','Deeznuts',  'krisnuts@mail.com',    24348210);
 
-INSERT INTO Book(addition, size, is_cleaned, license_plate)
+INSERT INTO Booking(addition, size, is_cleaned, license_plate)
     VALUES ('none',     'SUV',      'true',   'CK12345'),
            ('polering', 'Micro',    'false',  'AE10808'),
            ('none',     'Sedan',    'true',   'BM74823'),

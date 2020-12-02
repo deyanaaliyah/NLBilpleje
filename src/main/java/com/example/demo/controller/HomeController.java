@@ -14,7 +14,7 @@ public class HomeController {
     private PersonRepository repository;
 
     // Reserves a customizable URL and body contains methods to be executed inside HTML
-    @GetMapping("/")
+    @GetMapping("/index")
     public String index(Model model) {
 
         // Prints out all persons on homepage via model.addAttribute method
