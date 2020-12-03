@@ -1,0 +1,169 @@
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="shortcut icon" href="https://scontent-cph2-1.xx.fbcdn.net/v/t1.0-9/93382308_126884162254446_3932629952100302848_o.png?_nc_cat=105&ccb=2&_nc_sid=09cbfe&_nc_ohc=cjn4S9IOKTAAX8TosAJ&_nc_oc=AQmnVSTyPcnr6FoeFWaFbbOORTTjmz80CaPVw_Y8T5c7XzTzznnne4ri56ggaXWCqj0&_nc_ht=scontent-cph2-1.xx&oh=0815c8641873fc2995bf1ceafc469c74&oe=5FED3BAD" type="image/x-icon">
+  <title>IUS Humanum</title>
+</head>
+<body>
+  <script>
+    //this is where we apply opacity to the arrow
+    $(window).scroll( function(){
+        //get scroll position
+        var topWindow = $(window).scrollTop();
+        //multipl by 1.5 so the arrow will become transparent half-way up the page
+        var topWindow = topWindow*1.5;
+        //get height of window
+        var windowHeight = $(window).height();
+        //set position as percentage of how far the user has scrolled 
+        var position = topWindow / windowHeight;
+        //invert the percentage
+        position = 1 - position;
+        //define arrow opacity as based on how far up the page the user has scrolled
+        //no scrolling = 1, half-way up the page = 0
+        $('.arrow-wrap').css('opacity', position);
+    });
+
+    //Code stolen from css-tricks for smooth scrolling:
+    $(function() {
+      $('a[href*=#]:not([href=#])').click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') &&   location.hostname == this.hostname) {
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+          if (target.length) {
+            $('html,body').animate({
+              scrollTop: target.offset().top
+            }, 5000);
+            return false;
+          }
+        }
+      });
+    });
+    </script>
+  <!--NAVIGATION BAR-->
+  <nav id="burger">
+    <input type="checkbox" id="burger-checkbox" />
+    <label class="menu--toggle__trigger" for="burger-checkbox"></label>
+    <label class="menu--toggle__burger" for="burger-checkbox"></label>
+
+    <ul id="menu">
+      <li>
+        <a href="index.html" class="nav-item">Forside</a>
+      </li>
+      <li>
+        <a href="projekter.html" class="nav-item" id="project">Projekter</a>
+        <ul>
+          <li><a href="/projekt-1">Projekt 1</a></li>
+          <li><a href="/projekt-2">Projekt 2</a></li>
+          <li><a href="/projekt-3">Projekt 3</a></li>
+        </ul>
+      </li>
+      <li id="navlogo">
+        <a href="/">
+          <img src="https://scontent-cph2-1.xx.fbcdn.net/v/t1.0-9/93382308_126884162254446_3932629952100302848_o.png?_nc_cat=105&ccb=2&_nc_sid=09cbfe&_nc_ohc=cjn4S9IOKTAAX8TosAJ&_nc_oc=AQmnVSTyPcnr6FoeFWaFbbOORTTjmz80CaPVw_Y8T5c7XzTzznnne4ri56ggaXWCqj0&_nc_ht=scontent-cph2-1.xx&oh=0815c8641873fc2995bf1ceafc469c74&oe=5FED3BAD" id="navlogoscaled" />
+        </a>
+      </li>
+      <li>
+        <a href="om-os.html" class="nav-item">Om os</a>
+      </li>
+      <li>
+        <a href="kontakt-os.html" class="nav-item">Kontakt os</a>
+      </li>
+    </ul>
+  </nav>
+  <!--/NAVIGATION BAR-->
+  <!--INFO-->
+  <div>
+    <header>
+      <h1>Seneste nyt</h1>
+      <h3>
+        Human Rights Week
+      </h3>
+      <p>Fra d. 6.-10. december 2020 <br>
+        Racisme, diskrimination og hadforbrydelser i Danmark <br>
+        <small>OBS: Foregår virtuelt</small><br><br>
+        Læs mere om <a href="https://www.facebook.com/events/1624527347708043/">begivenheden</a>.
+      </p>
+    </header>
+  </div>
+  <div>
+    <img src="" alt="">
+  </div>
+  
+  <section class="main">
+  <a class="arrow-wrap" href="#content">
+  <span class="arrow"></span>
+  <!--<span class="hint">scroll</span>-->
+  </a>
+    
+    <div class="content" id="content">
+      <h1>IUS Humanum</h1>
+      <p>
+        Projektets formål er gennem foredrag, rundbordssamtaler og studieture at udvikle andres kendskab til menneskeretlige forhold i ind- og udland. Projektet har til formål at skabe et vidensudvekslende forum på det menneskeretlige område, hvor menneskerettigheder og retsstatsprincipper vil blive researchet og vil være til mål for politiske, juridiske, filosofiske og aktivistiske diskussioner.
+      </p>
+      <p>
+        I medio 2021 begynder vi med at afholde essay-konkurrencer samt udarbejder analyser og juridisk forskning om aktuelle debatter. <br>
+      </p>
+      <p>
+        Derudover opdaterer vi løbende events på Facebook og Instagram.
+      </p>
+    </div>
+  </section>
+  <!--/INFO-->
+</body>
+
+<footer class="footer-distributed">
+  <div class="footer-left">
+    <img src="https://scontent-cph2-1.xx.fbcdn.net/v/t1.0-9/93382308_126884162254446_3932629952100302848_o.png?_nc_cat=105&ccb=2&_nc_sid=09cbfe&_nc_ohc=cjn4S9IOKTAAX8TosAJ&_nc_oc=AQmnVSTyPcnr6FoeFWaFbbOORTTjmz80CaPVw_Y8T5c7XzTzznnne4ri56ggaXWCqj0&_nc_ht=scontent-cph2-1.xx&oh=0815c8641873fc2995bf1ceafc469c74&oe=5FED3BAD" class="navlogoscaled">
+
+    <p class="footer-links">
+      <a href="index.html">Forside</a>
+      ·     
+    <a href="projekter.html">Projekter</a>
+      ·     
+    <a href="om-os.html">Om os</a>
+    ·
+    <a href="om-os.html">FAQ</a>
+    ·
+    <a href="kontakt-os.html">Kontakt os</a>
+      </p>
+      <p class="footer-company-name">IUS Humanum &copy; 2020</p>
+  </div>
+
+  <div class="footer-center">
+    <div>
+      <i class="fa fa-map-marker"></i>
+      <p><span>AAU</span> Aarhus Universitet </p>
+    </div>
+    <div>
+      <i class="fa fa-phone"></i>
+      <p><br><a href="tel:12345678">+45 12 34 56 78</a></p>
+    </div>
+    <div>
+      <i class="fa fa-envelope"></i>
+      <p><br><a href="mailto:info@iushumanum.dk">info@iushumanum.dk</a></p>
+    </div>
+  </div>
+    <div class="footer-right">
+      <p class="footer-company-about">
+        <span>IUS Humanum</span>
+        Menneskerettighedsprojekt under dialog forum.
+      </p>
+      <div class="footer-icons">
+        <a href="https://www.facebook.com/iushumanumdk/">
+          <i class="fa fa-facebook">
+            <img src="https://www.vectorico.com/?wpfilebase_thumbnail=1&fid=146& name=Facebook-Logo. png" id="fa-facebook">
+          </i>
+        </a>
+        <a href="https://www.instagram.com/iushumanum_dk/">
+          <i class="fa fa-twitter">
+            <img src="http://www.braiavillas.com/wp-content/uploads/Instagram-Vector.png"    id="fa-instagram">
+          </i>
+        </a>
+      </div>
+    </div>
+  </div>
+  </footer>
+</html>
+

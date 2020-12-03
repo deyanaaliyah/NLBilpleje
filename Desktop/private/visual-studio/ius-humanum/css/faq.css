@@ -1,0 +1,77 @@
+h3 {
+  margin: 20px auto 80px;
+  font-size: 38px;
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  color: #004c84;
+}
+header{
+  text-align: center;
+}
+details {
+  width: 75%;
+  min-height: 5px;
+  max-width: 700px;
+  padding: 45px 70px 45px 45px;
+  margin: 0 auto;
+  position: relative;
+  font-size: 22px;
+  border: 1px solid #004c84;
+  border-radius: 15px;
+  box-sizing: border-box;
+  transition: all 0.3s;
+}
+details + details {
+  margin-top: 40px;
+}
+details[open] {
+  margin-bottom: 11.6%;
+  min-height: 50px;
+  background-color: #f6f7f8;
+  box-shadow: 2px 2px 20px #f6f7f8;
+}
+
+details p {
+  margin-top: 10%;
+  font-weight: 300;
+}
+summary {
+  color: #004c84;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  cursor: pointer;
+}
+summary:focus {
+  outline: none;
+}
+summary:focus::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+.control-icon {
+  fill: #004c84;
+  transition: 0.3s ease;
+  pointer-events: none;
+}
+.control-icon-close {
+  display: none;
+}
+details[open] .control-icon-close {
+  display: initial;
+  transition: 0.3s ease;
+}
+details[open] .control-icon-expand {
+  display: none;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login demo</title>
+    <link rel="stylesheet" href="login/stylesheet.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet"/>
+
+</head>
+<script>
+    window.onload = function(){
+        alert("To login, please use one of these fake mails without password: " +
+            "\nfake@mail.com" +
+            "\nLaurelDoe@mail.com" +
+            "\nYannyYates@mail.com" +
+            "\nOliverBram@mail.com" +
+            "\n\nIt is case sensitive!")
+    };
+
+</script>
+
+<body>
+<div class="container">
+    <br/>
+    <br/>
+    <h1 class="form-group" id="welcome">welcome</h1>
+    <form action="/logindemo" method="POST" class="offset-4">
+        <div class="form-group">
+            <br/><br/>
+            <input type="email" name="email" placeholder="enter your email..." class="form-control"/>
+        </div>
+        <div class="form-group">
+            <input type="password" name="password" placeholder="enter your password..." class="form-control"/>
+            <br/>
+        </div>
+        <div class="form-group">
+            <br/>
+            <button type="submit" class="btn">sign in</button>
+        </div>
+        <br/>
+    </form>
+</div>
+</body>
+
+<footer>
+    <span>
+        <p>a design concept by</p>
+        <h4>deyan aaliyah</h4>
+    </span>
+</footer>
+</html>

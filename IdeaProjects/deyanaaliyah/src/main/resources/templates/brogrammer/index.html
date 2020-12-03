@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Brogrammer</title>
+    <link rel="stylesheet" href="brogrammer/styles.css" />
+    <link rel="icon" type="image/png" href="brogrammer/img/brogrammer-logo(1,-scaled,beige).png" />
+</head>
+
+<body>
+<!--NAVIGATION BAR-->
+<nav id="burger">
+    <input type="checkbox" id="burger-checkbox" />
+    <label class="menu--toggle__trigger" for="burger-checkbox"></label>
+    <label class="menu--toggle__burger" for="burger-checkbox"></label>
+
+    <ul id="menu">
+        <li>
+            <a href="/" class="nav-item">Home</a>
+        </li>
+        <li>
+            <a href="/" class="nav-item">Buy</a>
+        </li>
+        <li id="navlogo">
+            <a href="/">
+                <img src="brogrammer/img/brogrammer-logo(1,-scaled,beige).png" id="navlogoscaled" />
+            </a>
+        </li>
+        <li>
+            <a href="/" class="nav-item">About us</a>
+        </li>
+        <li>
+            <a href="/" class="nav-item">Contact us</a>
+        </li>
+    </ul>
+</nav>
+
+<!--WELCOME-->
+<main id="welcome">
+    <h1 id="brogrammerfont">Brogrammer</h1>
+    <p>Lorem ipsum dolor sit amet!</p>
+    <br />
+    <div class="button button-2">
+        <h3>Contact us</h3>
+    </div>
+</main>
+
+<main id="quick-ref">
+    <h1>Build your website!</h1>
+    <div>
+        <div class="quick-ref-item">
+            <img src="https://image.flaticon.com/icons/png/512/115/115773.png" class="quick-ref-icon" />
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+        </div>
+
+        <div class="quick-ref-item">
+            <img src="https://image.flaticon.com/icons/png/512/115/115769.png" class="quick-ref-icon" />
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+        </div>
+
+        <div class="quick-ref-item">
+            <img src="https://image.flaticon.com/icons/png/512/94/94775.png" class="quick-ref-icon" />
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+        </div>
+    </div>
+</main>
+
+<!--ABOUT US-->
+<main id="om-os">
+    <h1>Two students at KEA</h1>
+    <p class="inside-main">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+        consectetur augue tortor, et eleifend orci tincidunt et. In tempor dui
+        purus, mattis pretium nulla vulputate nec. Donec vel mi nisi. Maecenas
+        sollicitudin in nisi vitae pulvinar. Vivamus elementum velit
+        pellentesque lorem condimentum, vel consectetur elit auctor.
+    </p>
+</main>
+
+<!--OFFER-->
+<main>
+    <h1>Prices</h1>
+    <div id="slideshow">
+        <div class="slide-wrapper">
+            <div class="slide"><img src="brogrammer/img/nmw.png" /></div>
+            <div class="slide">
+                <img src="brogrammer/img/china house.png" class="photo" />
+            </div>
+            <div class="slide">
+                <img src="brogrammer/img/chinahousee.jpg" class="photo" />
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-form">
+        <h3>Message us!</h3>
+        <p class="inside-main">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+            consectetur augue tortor, et eleifend orci tincidunt et. In tempor dui
+            purus, mattis pretium nulla vulputate nec.
+        </p>
+        <form action="MAILTO:dejanalija@gmail.com?subject=How much does it cost?" method="POST" enctype="text/plain"
+              class="input-form">
+            <small>* means required</small><br />
+            <label for="name"></label>
+            <input id="name" type="text" placeholder="Full name... *" required />
+            <br />
+            <label for="phone"></label>
+            <input id="phone" type="tel" placeholder="Phone number..." />
+            <br />
+            <label for="mail"></label>
+            <input id="mail" type="email" placeholder="Mail... *" required />
+            <br />
+            <label for="company"></label>
+            <input id="company" type="text" placeholder="Company" />
+            <br />
+
+            <p>Har du allerede en hjemmeside?</p>
+            <label class="switch">
+                <input type="checkbox" />
+                <span class="slider round"></span> </label><br />
+
+            <label for="msg-to-send"></label>
+            <textarea id="msg-to-send" cols="30" rows="10" placeholder="Your mesage..."></textarea>
+            <br />
+            <br />
+
+            <input type="submit" value="Send" id="submit-btn" />
+            <input type="reset" value="Fortryd" id="reset-btn" />
+
+            <br />
+            <br />
+        </form>
+    </div>
+</main>
+
+<!--FOOTER-->
+<footer>
+    <div id="footer-main"></div>
+    <div id="copy-rights">
+        <p>
+            deyan aaliyah, oliver bramsen<br />
+            2020&copy
+        </p>
+    </div>
+</footer>
+</body>
+</html>
