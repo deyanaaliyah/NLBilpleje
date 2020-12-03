@@ -1,22 +1,22 @@
 CREATE TABLE IF NOT EXISTS Customers (
-                                      "id" INT(100) NOT NULL auto_increment,
-                                      "car_type" VARCHAR(200),
-                                      "first_name" VARCHAR(200),
-                                      "last_name" VARCHAR(200),
-                                      "mail" VARCHAR(200),
-                                      "phone" INT(8),
-                                      PRIMARY KEY ("id"));
+                                      id INT(100) NOT NULL auto_increment,
+                                      car_type VARCHAR(200),
+                                      first_name VARCHAR(200),
+                                      last_name VARCHAR(200),
+                                      mail VARCHAR(200),
+                                      phone INT(8),
+                                      PRIMARY KEY (id));
 
 CREATE TABLE IF NOT EXISTS Bookings(
-                                   "id"            INT(100) NOT NULL auto_increment,
-                                   "addition"      VARCHAR(200),
-                                   "size"          VARCHAR(200),
-                                   "status"    VARCHAR(200),
-                                   "license_plate"  VARCHAR(7),
-                                   "customer_id"     INT(100),
-                                   `date` TIMESTAMP NOT NULL DEFAULT CURRENT_DATE(),
-                                   PRIMARY KEY ("id"),
-                                   FOREIGN KEY ("customer_id")
+                                   id            INT(100) NOT NULL auto_increment,
+                                   addition      VARCHAR(200),
+                                   size        VARCHAR(200),
+                                   status    VARCHAR(200),
+                                   license_plate  VARCHAR(7),
+                                   customer_id     INT(100),
+                                   date VARCHAR(20) NOT NULL,
+                                   PRIMARY KEY (id),
+                                   FOREIGN KEY (customer_id)
                                        REFERENCES Customers(id));
 
 -- data to be inserted into tables

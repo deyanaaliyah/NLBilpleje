@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 // "@Entity" is a statement to create a table
 @Entity
-public class Booking {
+public class Bookings {
 
     // Generates an id which is auto incremental
     @Id
@@ -18,9 +18,9 @@ public class Booking {
     private String status;
     private String date;
 
-    public Booking() {
+    public Bookings() {
     }
-    public Booking(String size, String addition , String licensePlate , String status, String date) {
+    public Bookings(String size, String addition , String licensePlate , String status, String date) {
         this.size = size;
         this.addition = addition;
         this.licensePlate = licensePlate;

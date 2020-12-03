@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-public class Customer {
+public class Customers {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long pid;
