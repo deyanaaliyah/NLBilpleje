@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.model.Bookings;
+import com.example.demo.model.Booking;
 import com.example.demo.repository.BookingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -44,7 +44,7 @@ public class BookingController {
 
     //Post is equal to "I requested some things to be added/updated, now I tell the DB to handle and save my choices
     @PostMapping("/addEdit")
-    private String bookAddedOrUpdated(Bookings booking) {
+    private String bookAddedOrUpdated(Booking booking) {
 
         //If an ID is not provided, then create/save a new one
         if (booking.getId() == null) {
@@ -54,10 +54,10 @@ public class BookingController {
         //If ID is provided, then change these fields
         else{
             //Use Optional to find specific album to be updated
-            Optional<Bookings> book1 = repository.findById(booking.getId());
+            Optional<Booking> book1 = repository.findById(booking.getId());
 
             if(book1.isPresent()){
-                Bookings editBook = book1.get();
+                Booking editBook = book1.get();
                 editBook.setSize(booking.getSize());
                 editBook.setAddition(booking.getAddition());
                 editBook.setLicensePlate(booking.getLicensePlate());
@@ -74,7 +74,7 @@ public class BookingController {
     private String deleteBook(@PathVariable("id") Long id){
 
         //Optional to find specific album to be deleted
-        Optional<Bookings> booking = repository.findById(id);
+        Optional<Booking> booking = repository.findById(id);
 
         //CrudRepository object will delete it
         repository.deleteById(booking.get().getId());

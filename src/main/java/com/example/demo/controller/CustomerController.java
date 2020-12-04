@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.model.Customers;
+import com.example.demo.model.Customer;
 import com.example.demo.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,14 +18,14 @@ public class CustomerController {
 
     // Reserves a customizable URL and body contains methods to be executed inside HTML
     @GetMapping("/customers")
-    public Iterable<Customers> readCustomer(){
+    public Iterable<Customer> readCustomer(){
         // Prints out all persons on homepage in Json format
         return repository.findAll();
     }
 
     @GetMapping("/customers/{id}")
-    public ResponseEntity<Optional<Customers>> readOne(@PathVariable Long id){
-        Optional<Customers> response = repository.findById(id);
+    public ResponseEntity<Optional<Customer>> readOne(@PathVariable Long id){
+        Optional<Customer> response = repository.findById(id);
         if(response.isPresent()) {
             return ResponseEntity.status(200).body(response);
         }else {
