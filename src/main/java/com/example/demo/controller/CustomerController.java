@@ -1,37 +1,63 @@
 package com.example.demo.controller;
 
+import com.example.demo.model.Admin;
 import com.example.demo.model.Customer;
+import com.example.demo.repository.AdminRepository;
 import com.example.demo.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.servlet.http.HttpSession;
 import java.util.Optional;
 
-@RestController
+@Controller
 public class CustomerController {
 
     // Instantiates the person repository interface
     @Autowired
-    private CustomerRepository repository;
+    private CustomerRepository customerRepository;
+    @Autowired
+    private AdminRepository adminRepository;
 
+    @GetMapping("/kunder")
+    public String customerLoginIndex(HttpSession session){
 
-    // Reserves a customizable URL and body contains methods to be executed inside HTML
-    @GetMapping("/customers")
-    public Iterable<Customer> readCustomer(){
-        // Prints out all persons on homepage in Json format
-        return repository.findAll();
-    }
-
-    @GetMapping("/customers/{id}")
-    public ResponseEntity<Optional<Customer>> readOne(@PathVariable Long id){
-        Optional<Customer> response = repository.findById(id);
-        if(response.isPresent()) {
-            return ResponseEntity.status(200).body(response);
-        }else {
-            return ResponseEntity.status(404).body(response);
+        // HttpSession
+        if(session.getAttribute("isLogIn") != null){
+            return "/customer/customer-overview";
         }
-    }
 
+        return "/customer/login-customer";
+    }
+    @PostMapping("/kunder")
+    public String customerLoginCheck(@ModelAttribute Admin admin, Model model, HttpSession session){
+        // assign an admin to be named "u"
+        Admin u = adminRepository.read(admin.getUsername(), admin.getPassword());
+
+        // check if crediatials is in the arraylist is correct
+        if (u != null){
+            // if so, change "isLogIn" attribute to true
+            session.setAttribute("isLogIn", "yes");
+
+            // and now try to get data from database
+            try{
+                model.addAttribute("customers", customerRepository.findAll());
+            }catch (Exception e){
+                System.out.println(e.getMessage());
+            }
+
+            // and finally return the correct html
+            return "/customer/customer-overview";
+        }
+
+        // else, return login formula
+        return "/customer/login-customer";
+    }
 
 }

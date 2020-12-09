@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -67,19 +68,19 @@ public class Customer {
         this.carType = carType;
     }
 
-    /*
-    public Set<Book> getBookSet() {
-        return bookSet;
+    public void setPid(Long pid) {
+        this.pid = pid;
     }
 
-    public void setBookSet(Set<Book> bookSet) {
-        this.bookSet = bookSet;
+    public List<Booking> getBookingList() {
+        return bookingList;
     }
 
-    // This is the relation types
-    @OneToMany
-    @JoinColumn(name = "id")
-    private Set<Book> bookSet;
+    public void setBookingList(List<Booking> bookingList) {
+        this.bookingList = bookingList;
+    }
 
-     */
+    // One customer can have Many Bookings
+    @OneToMany(mappedBy = "customer")
+    public List<Booking> bookingList;
 }

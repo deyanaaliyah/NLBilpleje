@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 // "@Entity" is a statement to create a table
 @Entity
@@ -21,12 +22,14 @@ public class Booking {
 
     public Booking() {
     }
-    public Booking(String size, String addition , String licensePlate , String status, String date) {
+    public Booking(Long id, String size, String addition, String licensePlate, String status, String date, Customer customer) {
+        this.id = id;
         this.size = size;
         this.addition = addition;
         this.licensePlate = licensePlate;
         this.status = status;
         this.date = date;
+        this.customer = customer;
     }
 
     // Getters and setters
@@ -77,18 +80,15 @@ public class Booking {
     public void setDate(String date) {
         this.date = date;
     }
-    /*
-    public List<Person> getPersonSet() {
-        return personSet;
+
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public void setPersonSet(List<Person> personSet) {
-        this.personSet = personSet;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
-    // This is the relation types
-    @OneToMany(mappedBy = "person_id")
-    public List<Person> personSet;
-
-     */
+    @ManyToOne
+    private Customer customer;
 }

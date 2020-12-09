@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+    <link rel="icon" type="image/png" href="https://i1.wp.com/www.pitlaneautomotive.ca/wp-content/uploads/2017/02/pitlane-automotive-car-favicon.png?ssl=1"/>
+</head>
+<body>
+<p>Logget in som : Admin</p>
+<h2>Velkommen</h2>
+
+<a href="/book">
+    <button>Ny booking</button>
+</a>
+<a href="/booking">
+    <button>Se bookings</button>
+</a>
+<table>
+    <caption>Kunder</caption>
+    <tr>
+        <td>Navn</td>
+        <td>Mail</td>
+        <td>Telefon</td>
+        <td>Bil</td>
+        <td>Ændr</td>
+    </tr>
+    <tr th:each="c : ${customers}">
+        <td th:text="${c.firstName}"></td>
+        <td th:text="${c.mail}"></td>
+        <td th:text="${c.phone}"></td>
+        <td th:text="${c.carType}"></td>
+        <td>
+            <a th:href="@{/kunder/{id}(id=${c.pid})}" role="button">Redigér</a>
+            <a th:href="@{/kunder/{id}(id=${c.pid})}" role="button">Slet</a>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>NL Bilpleje</title>
+    <link rel="icon" type="image/png" href="https://i1.wp.com/www.pitlaneautomotive.ca/wp-content/uploads/2017/02/pitlane-automotive-car-favicon.png?ssl=1"/>
+</head>
+<body>
+<div>
+    <h4>Create new album</h4><br>
+
+    <form action="#" th:action="@{/addEdit}" method="POST" th:object="${bookings}">
+        Bilstørrelse<br/>
+        <input type="text" id="size" th:field="*{size}" placeholder="Størrelse på din bil..."/>
+
+        <br/>
+        Tilføjelser<br/>
+        <input type="text" id="addition" th:field="*{addition}" />
+
+        <br/>
+        Nummerplade<br/>
+        <input type="text" id="licensePlate" th:field="*{licensePlate}" placeholder="Nummerplade..."/>
+
+        <br/>
+        Dato<br/>
+        <input type="text" id="date" th:field="*{date}" />
+
+        <br/>
+        <input type="hidden" id="id" th:field="*{id}">
+        <input type="hidden" id="false" th:field="*{status}">
+
+        <br/>
+        <button type="submit">Opret</button>
+        <button type="reset" >Fortryd</button>
+        <br>
+    </form>
+
+</div>
+</body>
+</html>

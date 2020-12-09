@@ -28,12 +28,11 @@ public class AdminController {
 
         // HttpSession
         if(session.getAttribute("isLogIn") != null){
-            return "/login/logged-in";
+            return "/login/booking-overview";
         }
 
         return "/login/login-index";
     }
-
     @PostMapping("/login")
     public String loginCheck(@ModelAttribute Admin admin, Model model, HttpSession session){
         // assign an admin to be named "u"
@@ -52,13 +51,12 @@ public class AdminController {
             }
 
             // and finally return the correct html
-            return "/login/logged-in";
+            return "/login/booking-overview";
         }
 
         // else, return login formula
         return "/login/login-index";
     }
-
     @GetMapping("/logud")
     public String logout(HttpSession session){
 
@@ -66,7 +64,7 @@ public class AdminController {
         session.removeAttribute("isLogIn");
 
         if(session.getAttribute("isLogIn") != null){
-            return "/login/logged-in";
+            return "/login/booking-overview";
         }
 
         return "/login/login-index";

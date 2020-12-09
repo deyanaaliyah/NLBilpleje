@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Admin</title>
     <link rel="icon" type="image/png" href="https://i1.wp.com/www.pitlaneautomotive.ca/wp-content/uploads/2017/02/pitlane-automotive-car-favicon.png?ssl=1"/>
-
 </head>
 <body>
 <p>Logget in som : Admin</p>
@@ -13,7 +12,7 @@
 <a href="/book">
     <button>Ny booking</button>
 </a>
-<a href="/customer">
+<a href="/kunder">
     <button>Se kunder</button>
 </a>
 <table>
@@ -34,7 +33,7 @@
         <td th:text="${b.date}"></td>
         <td>
             <a th:href="@{/edit/{id}(id=${b.id})}" role="button">Redigér</a>
-            <a th:href="@{/delete/{id}(id=${b.id})}" role="button">Slet</a>
+            <a th:href="@{/edit/{id}(id=${b.id})}" role="button">Slet</a>
         </td>
     </tr>
 </table>
