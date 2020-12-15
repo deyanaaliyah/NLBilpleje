@@ -25,7 +25,6 @@ public class AdminController {
 
     @GetMapping("/login")
     public String loginIndex(HttpSession session){
-
         // HttpSession
         if(session.getAttribute("isLogIn") != null){
             return "/login/booking-overview";
