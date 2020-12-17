@@ -11,7 +11,3 @@ public class DemoApplication {
         
     }
 }
-
-//jenkins test. does it work???????????
-//test2MO
-//TestHM
