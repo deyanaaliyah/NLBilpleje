@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.example.demo.model.Booking</OriginalElement>
+  <nodes>
+    <node x="0.0" y="936.5">com.example.demo.controller.HomeController</node>
+    <node x="201.25" y="44.0">javax.persistence.Entity</node>
+    <node x="0.0" y="1091.0">org.springframework.boot.autoconfigure.SpringBootApplication</node>
+    <node x="722.0" y="903.0">com.example.demo.controller.CustomerController</node>
+    <node x="389.0" y="1195.0">com.example.demo.repository.AdminRepository</node>
+    <node x="878.0000000000001" y="484.0">com.example.demo.repository.CustomerRepository</node>
+    <node x="355.5" y="777.0">org.springframework.stereotype.Controller</node>
+    <node x="955.0000000000002" y="160.0">org.springframework.data.repository.CrudRepository</node>
+    <node x="202.0" y="203.5">com.example.demo.model.Customer</node>
+    <node x="180.0" y="936.5">com.example.demo.controller.BookingController</node>
+    <node x="904.0000000000002" y="80.0">org.springframework.data.repository.NoRepositoryBean</node>
+    <node x="459.0" y="192.0">com.example.demo.model.Booking</node>
+    <node x="0.0" y="324.0">com.example.demo.model.Admin</node>
+    <node x="550.5" y="0.0">javax.persistence.Table</node>
+    <node x="1100.0000000000002" y="80.0">org.springframework.data.repository.Repository</node>
+    <node x="88.0" y="1305.0">com.example.demo.DemoApplication</node>
+    <node x="1090.0" y="484.0">com.example.demo.repository.BookingRepository</node>
+    <node x="1112.0000000000002" y="0.0">org.springframework.stereotype.Indexed</node>
+    <node x="408.0" y="881.0">com.example.demo.controller.AdminController</node>
+    <node x="418.5" y="1091.0">org.springframework.stereotype.Repository</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.example.demo.repository.BookingRepository" target="org.springframework.data.repository.CrudRepository">
+      <point x="1.1368683772161603E-13" y="-15.0" />
+      <point x="1182.0000000000002" y="459.0" />
+      <point x="1139.5000000000002" y="459.0" />
+      <point x="61.5" y="137.0" />
+    </edge>
+    <edge source="org.springframework.data.repository.CrudRepository" target="org.springframework.data.repository.Repository">
+      <point x="61.5" y="-137.0" />
+      <point x="1139.5000000000002" y="135.0" />
+      <point x="1164.0000000000002" y="135.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.example.demo.repository.CustomerRepository" target="org.springframework.data.repository.CrudRepository">
+      <point x="0.0" y="-15.0" />
+      <point x="974.0000000000001" y="459.0" />
+      <point x="1016.5000000000002" y="459.0" />
+      <point x="-61.5" y="137.0" />
+    </edge>
+    <edge source="com.example.demo.model.Booking" target="javax.persistence.Table">
+      <point x="93.5" y="-270.0" />
+      <point x="63.0" y="71.0" />
+    </edge>
+    <edge source="com.example.demo.controller.AdminController" target="org.springframework.stereotype.Controller">
+      <point x="0.0" y="-82.5" />
+      <point x="555.0" y="861.0" />
+      <point x="435.5" y="861.0" />
+      <point x="16.0" y="27.0" />
+    </edge>
+    <edge source="com.example.demo.repository.AdminRepository" target="org.springframework.stereotype.Repository">
+      <point x="0.0" y="-50.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="com.example.demo.controller.CustomerController" target="org.springframework.stereotype.Controller">
+      <point x="0.0" y="-60.5" />
+      <point x="895.5" y="851.0" />
+      <point x="467.5" y="851.0" />
+      <point x="48.0" y="27.0" />
+    </edge>
+    <edge source="com.example.demo.model.Customer" target="javax.persistence.Table">
+      <point x="59.25" y="-258.5" />
+      <point x="379.75" y="172.0" />
+      <point x="613.5" y="172.0" />
+      <point x="-63.0" y="71.0" />
+    </edge>
+    <edge source="com.example.demo.model.Booking" target="javax.persistence.Entity">
+      <point x="-93.5" y="-270.0" />
+      <point x="552.5" y="162.0" />
+      <point x="301.25" y="162.0" />
+      <point x="40.0" y="27.0" />
+    </edge>
+    <edge source="com.example.demo.controller.HomeController" target="org.springframework.stereotype.Controller">
+      <point x="0.0" y="-27.0" />
+      <point x="80.0" y="851.0" />
+      <point x="371.5" y="851.0" />
+      <point x="-48.0" y="27.0" />
+    </edge>
+    <edge source="com.example.demo.model.Admin" target="javax.persistence.Entity">
+      <point x="0.0" y="-138.0" />
+      <point x="91.0" y="172.0" />
+      <point x="221.25" y="172.0" />
+      <point x="-40.0" y="27.0" />
+    </edge>
+    <edge source="com.example.demo.DemoApplication" target="org.springframework.boot.autoconfigure.SpringBootApplication">
+      <point x="0.0" y="-27.0" />
+      <point x="0.0" y="82.0" />
+    </edge>
+    <edge source="com.example.demo.controller.BookingController" target="org.springframework.stereotype.Controller">
+      <point x="0.0" y="-27.0" />
+      <point x="284.0" y="861.0" />
+      <point x="403.5" y="861.0" />
+      <point x="-16.0" y="27.0" />
+    </edge>
+    <edge source="org.springframework.data.repository.CrudRepository" target="org.springframework.data.repository.NoRepositoryBean">
+      <point x="-61.5" y="-137.0" />
+      <point x="1016.5000000000002" y="135.0" />
+      <point x="992.0000000000002" y="135.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.springframework.data.repository.Repository" target="org.springframework.stereotype.Indexed">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.example.demo.model.Customer" target="javax.persistence.Entity">
+      <point x="-59.25" y="-258.5" />
+      <point x="0.0" y="27.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.5" x="582.7083333333333" y="387.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Methods</Category>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
