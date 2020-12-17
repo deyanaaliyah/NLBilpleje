@@ -19,7 +19,7 @@ import java.util.Optional;
 @Controller
 public class CustomerController {
 
-    // Instantiates the person repository interface
+    // Instantiates the customer repository interface
     @Autowired
     private CustomerRepository customerRepository;
     @Autowired
