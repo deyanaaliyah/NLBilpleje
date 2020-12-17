@@ -8,8 +8,8 @@ public class DemoApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
+        
     }
 }
 
-//Mo test
 //jenkins test. does it work???????????
