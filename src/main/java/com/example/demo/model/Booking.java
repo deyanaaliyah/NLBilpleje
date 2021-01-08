@@ -93,6 +93,4 @@ public class Booking {
         this.customer = customer;
     }
 
-    @ManyToOne
-    private Customer customer;
 }
