@@ -24,7 +24,7 @@ public class CustomerController {
     private CustomerRepository customerRepository;
     @Autowired
     private AdminRepository adminRepository;
-
+/*
     @GetMapping("/kunder")
     public String customerLoginIndex(HttpSession session){
 
@@ -35,12 +35,13 @@ public class CustomerController {
 
         return "/customer/login-customer";
     }
+
     @PostMapping("/kunder")
     public String customerLoginCheck(@ModelAttribute Admin admin, Model model, HttpSession session){
         // assign an admin to be named "u"
         Admin u = adminRepository.read(admin.getUsername(), admin.getPassword());
 
-        // check if crediatials is in the arraylist is correct
+        // check if credentials in the arraylist is correct
         if (u != null){
             // if so, change "isLogIn" attribute to true
             session.setAttribute("isLogIn", "yes");
@@ -59,5 +60,5 @@ public class CustomerController {
         // else, return login formula
         return "/customer/login-customer";
     }
-
+*/
 }
