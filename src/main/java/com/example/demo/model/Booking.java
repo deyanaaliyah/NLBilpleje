@@ -93,4 +93,12 @@ public class Booking {
         this.customer = customer;
     }
 
+    public Long getCustomerId(){
+        return customer.getPid();
+    }
+
+    public String getCustomerEmail(){
+        return customer.getMail();
+    }
+
 }

@@ -17,11 +17,11 @@
 </a>
 <table class="table">
     <caption>Seneste bookings</caption>
-    <thead>
+    <thead class="thead-dark">
         <tr>
-            <th scope="col">#</th>
+            <th scope="col">Kunde</th>
+            <th scope="col">E-mail</th>
             <th scope="col">Nummerplade</th>
-            <th scope="col">Navn</th>
             <th scope="col">Bil</th>
             <th scope="col">Ekstra tilkøb</th>
             <th scope="col">Status</th>
@@ -31,9 +31,9 @@
     </thead>
     <tbody>
         <tr th:each="b : ${bookings}">
-            <th scope="row" th:text="${b.id}"></th>
+            <th scope="row" th:text="'# '+${b.customerId}"></th>
+            <td th:text="${b.customerEmail}"></td>
             <td th:text="${b.licensePlate}"></td>
-            <td th:text="${b.customer}"></td>
             <td th:text="${b.size}"></td>
             <td th:text="${b.addition}"></td>
             <td th:text="${b.status}"></td>
