@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Programming 2 Exam</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body class="container">
+
+<h2>Add Student</h2>
+<form class="overviewTable" action="#" th:action="@{/create-booking}" method="POST" th:object="${bookingToBeCreated}">
+    First name<br/>
+    <input type="text" class="form-control" id="firstName" th:field="*{firstName}" placeholder="First name..."/>
+    <br/>
+    Last name<br/>
+    <input type="text" class="form-control" id="lastName" th:field="*{lastName}"  placeholder="Last name..."/>
+    <br/>
+    Email<br/>
+    <input type="email" class="form-control" id="email" th:field="*{email}" placeholder="Email..."/>
+    <br/>
+
+    <input type="hidden" id="id" th:field="*{id}">
+    <br/>
+    <button type="submit" class="btn btn-success">Submit</button>
+    <button type="reset" class="btn btn-danger">Reset</button>
+    <br>
+</form>
+
+<style>
+    .overviewTable {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 80%;
+        margin: 3% auto;
+        border: 4px solid black;
+        padding: 1%;
+    }
+</style>
+
+</body>
+</html>

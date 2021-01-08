@@ -1,10 +1,15 @@
 package com.example.demo.controller;
 
+import com.example.demo.model.Booking;
 import com.example.demo.repository.IBookingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import java.awt.print.Book;
 
 @Controller
 public class BookingController {
@@ -13,9 +18,30 @@ public class BookingController {
     @Autowired
     private IBookingRepository bookingRepository;
 
+    //read all
+
     @GetMapping("/book")
     public String bookingOverview(Model model){
         model.addAttribute("bookings", bookingRepository.findAll());
         return "/login/booking-overview";
     }
+
+    //Create student
+    @GetMapping("/create-booking")
+    public String createStudent(Model model){
+        Booking booking = new Booking();
+        model.addAttribute("bookingToBeCreated", booking);
+        return "/booking/create-booking";
+    }
+
+    //Saves the created student
+    @PostMapping("/create-student")
+    public String createdBooking(@ModelAttribute Booking newBooking){
+        bookingRepository.save(newBooking);
+        return "successful";
+    }
+
+
+
+
 }
