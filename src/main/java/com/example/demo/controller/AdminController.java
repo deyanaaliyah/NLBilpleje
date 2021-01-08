@@ -2,8 +2,8 @@ package com.example.demo.controller;
 
 import com.example.demo.model.Admin;
 import com.example.demo.repository.AdminRepository;
-import com.example.demo.repository.BookingRepository;
-import com.example.demo.repository.CustomerRepository;
+import com.example.demo.repository.IBookingRepository;
+import com.example.demo.repository.ICustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,9 +19,9 @@ public class AdminController {
     @Autowired
     AdminRepository adminRepository;
     @Autowired
-    BookingRepository bookingRepository;
+    IBookingRepository bookingRepository;
     @Autowired
-    CustomerRepository customerRepository;
+    ICustomerRepository customerRepository;
 
     @GetMapping("/login")
     public String loginIndex(HttpSession session){
@@ -37,7 +37,7 @@ public class AdminController {
         // assign an admin to be named "u"
         Admin u = adminRepository.read(admin.getUsername(), admin.getPassword());
 
-        // check if crediatials is in the arraylist is correct
+        // check if credentials is in the arraylist is correct
         if (u != null){
             // if so, change "isLogIn" attribute to true
             session.setAttribute("isLogIn", "yes");
