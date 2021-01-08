@@ -24,17 +24,17 @@ public class BookingController {
         return "/booking/booking-overview";
     }
 
-    //Create student
+    //Create booking
     @GetMapping("/create-booking")
-    public String createStudent(Model model){
+    public String get(Model model){
         Booking booking = new Booking();
         model.addAttribute("bookingToBeCreated", booking);
         return "/booking/create-booking";
     }
 
-    //Saves the created student
+    //Saves the created booking
     @PostMapping("/create-student")
-    public String createdBooking(@ModelAttribute Booking newBooking){
+    public String save(@ModelAttribute Booking newBooking){
         bookingRepository.save(newBooking);
         return "successful";
     }
