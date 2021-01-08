@@ -18,9 +18,9 @@ public class Customer {
     private int phone;
     private String carType;
 
-
+    // One customer can have Many Bookings
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "customer")
-    private List<Booking>  bookingList;
+    private List<Booking> bookingList;
 
     // Getters and setters
     public long getPid() {
@@ -83,7 +83,4 @@ public class Customer {
         this.bookingList = bookingList;
     }
 
-    // One customer can have Many Bookings
-    @OneToMany(mappedBy = "customer")
-    public List<Booking> bookingList;
 }
