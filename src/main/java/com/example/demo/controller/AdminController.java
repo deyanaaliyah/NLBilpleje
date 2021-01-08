@@ -50,7 +50,7 @@ public class AdminController {
             }
 
             // and finally return the correct html
-            return "/login/booking-overview";
+            return "/booking/booking-overview";
         }
 
         // else, return login formula

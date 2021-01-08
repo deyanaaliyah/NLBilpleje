@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import java.awt.print.Book;
-
 @Controller
 public class BookingController {
 
@@ -23,7 +21,7 @@ public class BookingController {
     @GetMapping("/book")
     public String bookingOverview(Model model){
         model.addAttribute("bookings", bookingRepository.findAll());
-        return "/login/booking-overview";
+        return "/booking/booking-overview";
     }
 
     //Create student
