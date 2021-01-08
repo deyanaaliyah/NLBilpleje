@@ -19,6 +19,9 @@ public class Customer {
     private String carType;
 
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "customer")
+    private List<Booking>  bookingList;
+
     // Getters and setters
     public long getPid() {
         return pid;

@@ -20,6 +20,10 @@ public class Booking {
     private String status;
     private String date;
 
+    @ManyToOne
+    @JoinColumn(name = "customer_id")
+    private Customer customer;
+
     public Booking() {
     }
     public Booking(Long id, String size, String addition, String licensePlate, String status, String date, Customer customer) {

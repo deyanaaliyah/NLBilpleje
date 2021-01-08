@@ -15,27 +15,35 @@
 <a href="/kunder">
     <button>Se kunder</button>
 </a>
-<table>
+<table class="table">
     <caption>Seneste bookings</caption>
-    <tr>
-        <td>Navn</td>
-        <td>Bil</td>
-        <td>Ekstra tilkøb</td>
-        <td>Status</td>
-        <td>Booket sidst</td>
-        <td>Ændr</td>
-    </tr>
-    <tr th:each="b : ${bookings}">
-        <td th:text="${b.licensePlate}"></td>
-        <td th:text="${b.size}"></td>
-        <td th:text="${b.addition}"></td>
-        <td th:text="${b.status}"></td>
-        <td th:text="${b.date}"></td>
-        <td>
-            <a th:href="@{/edit/{id}(id=${b.id})}" role="button">Redigér</a>
-            <a th:href="@{/edit/{id}(id=${b.id})}" role="button">Slet</a>
-        </td>
-    </tr>
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nummerplade</th>
+            <th scope="col">Navn</th>
+            <th scope="col">Bil</th>
+            <th scope="col">Ekstra tilkøb</th>
+            <th scope="col">Status</th>
+            <th scope="col">Booket sidst</th>
+            <th scope="col">Ændr</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="b : ${bookings}">
+            <th scope="row" th:text="${b.id}"></th>
+            <td th:text="${b.licensePlate}"></td>
+            <td th:text="${b.customer}"></td>
+            <td th:text="${b.size}"></td>
+            <td th:text="${b.addition}"></td>
+            <td th:text="${b.status}"></td>
+            <td th:text="${b.date}"></td>
+            <td>
+                <a th:href="@{/edit/{id}(id=${b.id})}" role="button">Redigér</a>
+                <a th:href="@{/edit/{id}(id=${b.id})}" role="button">Slet</a>
+            </td>
+        </tr>
+    </tbody>
 </table>
 
 </body>
