@@ -15,7 +15,7 @@
 
 <a href="/book"><button class="btn btn-success">Ny booking</button></a>
 <a href="/book"><button class="btn btn-info">Se bookings</button></a>
-<table class="table">
+<table class="table overviewTable">
     <caption>Kunder</caption>
     <thead class="thead-dark">
         <tr>
@@ -41,6 +41,41 @@
         </tr>
     </tbody>
 </table>
+<style>
+    /*--- table start---*/
+    .overviewTable {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 85%;
+        margin: 3% auto;
+        border: 4px solid black;
+    }
 
+    .overviewTable tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    .overviewTable tr:hover {
+        background-color: #ddd;
+    }
+
+    .overviewTable tr {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        background-color: white;
+        color: black;
+    }
+
+    .overviewTable tr.overviewTable th {
+        border: 1px solid #ddd;
+        padding: 10px;
+    }
+
+    .overviewTable th {
+        padding: 1%;
+    }
+
+</style>
 </body>
 </html>
