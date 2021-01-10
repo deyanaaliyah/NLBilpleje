@@ -10,17 +10,28 @@
         <link rel="icon" type="image/png" href="https://i1.wp.com/www.pitlaneautomotive.ca/wp-content/uploads/2017/02/pitlane-automotive-car-favicon.png?ssl=1"/>
     </head>
     <body>
+<section class="loginBox">
         <form action="/login" method="POST">
             <div class="form-group">
                 <label for="exampleInputEmail1">Username</label>
                 <input name="username" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter username">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
                 <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button style="text-align: center; margin: 3% auto 0 auto; display:block;" type="submit" class="btn btn-primary">Submit</button>
         </form>
+</section>
+
+<style>
+    .loginBox{
+        background-color: #6c757d;
+        margin: 10% 30%;
+        padding: 2% 3%;
+
+    }
+</style>
+
     </body>
 </html>
