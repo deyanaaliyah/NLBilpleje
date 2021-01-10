@@ -35,8 +35,8 @@
             <td th:text="${c.phone}"></td>
             <td th:text="${c.carType}"></td>
             <td>
-                <a th:href="@{/kunder/{id}(id=${c.pid})}" role="button">Redigér</a>
-                <a th:href="@{/kunder/{id}(id=${c.pid})}" role="button">Slet</a>
+                <a class="btn btn-success btn-sm" th:href="@{/kunder/{id}(id=${c.pid})}" role="button">Redigér</a>
+                <a class="btn btn-danger btn-sm" th:href="@{/kunder/{id}(id=${c.pid})}" role="button">Slet</a>
             </td>
         </tr>
     </tbody>

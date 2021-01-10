@@ -41,8 +41,8 @@
                     <td th:text="${b.status}"></td>
                     <td th:text="${b.date}"></td>
                     <td>
-                        <a th:href="@{/edit/{id}(id=${b.id})}" role="button">Redigér</a>
-                        <a th:href="@{/edit/{id}(id=${b.id})}" role="button">Slet</a>
+                        <a class="btn btn-success btn-sm" th:href="@{/edit/{id}(id=${b.id})}" role="button">Redigér</a>
+                        <a class="btn btn-danger btn-sm" th:href="@{/edit/{id}(id=${b.id})}" role="button">Slet</a>
                     </td>
                 </tr>
             </tbody>
