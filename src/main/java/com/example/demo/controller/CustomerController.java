@@ -4,6 +4,8 @@ import com.example.demo.repository.AdminRepository;
 import com.example.demo.repository.ICustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class CustomerController {
@@ -13,6 +15,12 @@ public class CustomerController {
     private ICustomerRepository customerRepository;
     @Autowired
     private AdminRepository adminRepository;
+
+    @GetMapping("/kunder")
+    public String customerOverview(Model model){
+        model.addAttribute("customers", customerRepository.findAll());
+        return "customer/customer-overview";
+    }
 /*
     @GetMapping("/kunder")
     public String customerLoginIndex(HttpSession session){

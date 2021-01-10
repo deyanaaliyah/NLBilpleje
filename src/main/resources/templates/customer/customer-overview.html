@@ -18,6 +18,7 @@
 <table>
     <caption>Kunder</caption>
     <tr>
+        <td>#</td>
         <td>Navn</td>
         <td>Mail</td>
         <td>Telefon</td>
@@ -25,7 +26,8 @@
         <td>Ændr</td>
     </tr>
     <tr th:each="c : ${customers}">
-        <td th:text="${c.firstName}"></td>
+        <td th:text="${c.pid}"></td>
+        <td th:text="${c.firstName +' '+ c.lastName}"></td>
         <td th:text="${c.mail}"></td>
         <td th:text="${c.phone}"></td>
         <td th:text="${c.carType}"></td>
