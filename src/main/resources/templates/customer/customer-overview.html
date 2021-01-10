@@ -4,38 +4,46 @@
     <meta charset="UTF-8">
     <title>Admin</title>
     <link rel="icon" type="image/png" href="https://i1.wp.com/www.pitlaneautomotive.ca/wp-content/uploads/2017/02/pitlane-automotive-car-favicon.png?ssl=1"/>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 </head>
 <body>
 <p>Logget in som : Admin</p>
-<h2>Velkommen</h2>
+<h2>Kunde oversigt</h2>
 
 <a href="/book">
     <button>Ny booking</button>
 </a>
-<a href="/booking">
+<a href="/book">
     <button>Se bookings</button>
 </a>
-<table>
+<table class="table">
     <caption>Kunder</caption>
-    <tr>
-        <td>#</td>
-        <td>Navn</td>
-        <td>Mail</td>
-        <td>Telefon</td>
-        <td>Bil</td>
-        <td>Ændr</td>
-    </tr>
-    <tr th:each="c : ${customers}">
-        <td th:text="${c.pid}"></td>
-        <td th:text="${c.firstName +' '+ c.lastName}"></td>
-        <td th:text="${c.mail}"></td>
-        <td th:text="${c.phone}"></td>
-        <td th:text="${c.carType}"></td>
-        <td>
-            <a th:href="@{/kunder/{id}(id=${c.pid})}" role="button">Redigér</a>
-            <a th:href="@{/kunder/{id}(id=${c.pid})}" role="button">Slet</a>
-        </td>
-    </tr>
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Navn</th>
+            <th scope="col">Mail</th>
+            <th scope="col">Telefon</th>
+            <th scope="col">Bil</th>
+            <th scope="col">Ændr</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="c : ${customers}">
+            <td th:text="${c.pid}"></td>
+            <td th:text="${c.firstName +' '+ c.lastName}"></td>
+            <td th:text="${c.mail}"></td>
+            <td th:text="${c.phone}"></td>
+            <td th:text="${c.carType}"></td>
+            <td>
+                <a th:href="@{/kunder/{id}(id=${c.pid})}" role="button">Redigér</a>
+                <a th:href="@{/kunder/{id}(id=${c.pid})}" role="button">Slet</a>
+            </td>
+        </tr>
+    </tbody>
 </table>
 
 </body>
